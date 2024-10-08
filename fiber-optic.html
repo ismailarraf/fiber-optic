@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offres de Fibre Optique</title>
+    <style>
+        @font-face {
+            font-family: 'Degular';
+            src: url('path/to/Degular-Regular.woff2') format('woff2'), /* Update this path */
+                 url('path/to/Degular-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Degular';
+            src: url('path/to/Degular-SemiBold.woff2') format('woff2'), /* Update this path */
+                 url('path/to/Degular-SemiBold.woff') format('woff');
+            font-weight: 600; /* Semi-bold weight */
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Degular', Arial, sans-serif; /* Use Degular font */
+            background-color: white;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: orange;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            background-color: black; /* Changed to black */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        nav img {
+            height: 80px; /* Set default logo size */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid orange;
+            border-radius: 10px;
+            width: 300px;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: orange;
+            font-weight: 600; /* Semi-bold for headings */
+        }
+
+        .offer-details {
+            margin: 10px 0;
+        }
+
+        .button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600; /* Semi-bold for buttons */
+        }
+
+        .form-container {
+            display: none;
+            background: rgba(255, 165, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 90%; /* Responsive width */
+            max-width: 400px; /* Maximum width */
+        }
+
+        .form-container input,
+        .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid orange;
+            border-radius: 5px;
+        }
+
+        .close-button {
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            nav img {
+                height: 70px; /* Adjust logo size for smaller screens */
+            }
+
+            .card {
+                width: 90%; /* Make cards responsive */
+            }
+        }
+
+        @media (max-width: 400px) {
+            nav img {
+                height: 60px; /* Further adjust logo size for very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="ARRAFWIFiSERVICES.svg" alt="Logo">
+    </nav>
+
+    <header>
+        <h1>Offres de Fibre Optique d'Orange</h1>
+    </header>
+
+    <div class="container">
+        <!-- Fiber Optic Offer Cards -->
+        <div class="card">
+            <h2>Offre 20 Mo</h2>
+            <div class="offer-details">
+                <p> 249 dirhams/mois</p>
+                <p>50 Mo pendant 3 mois, puis 20 Mo</p>
+                <p>Jusqu'à 50 Mbit/s ↑ 50 Mbit/s</p>
+                <p>Appels 2h vers mobile et fixe international (zone 1)</p>
+                <p>Illimité vers fixe national</p>
+                <p>Installation : 99 dirhams</p>
+                <p>Routeur Wi-Fi6 : 0 dirham</p>
+            </div>
+            <button class="button" onclick="openForm('Offre 20 Mo', '249')">Demander</button>
+        </div>
+
+        <div class="card">
+            <h2>Offre 50 Mo</h2>
+            <div class="offer-details">
+                <p>349 dirhams/mois</p>
+                <p>100 Mo pendant 3 mois, puis 50 Mo</p>
+                <p>Jusqu'à 100 Mbit/s ↑ 100 Mbit/s</p>
+                <p>Appels 3h vers mobile et fixe international (zone 1)</p>
+                <p>Illimité vers fixe national</p>
+                <p>Installation : 0 dirham</p>
+                <p>Routeur Wi-Fi6 : 0 dirham</p>
+            </div>
+            <button class="button" onclick="openForm('Offre 50 Mo', '349')">Demander</button>
+        </div>
+
+        <div class="card">
+            <h2>Offre 100 Mo</h2>
+            <div class="offer-details">
+                <p>449 dirhams/mois</p>
+                <p>200 Mo pendant 3 mois, puis 100 Mo</p>
+                <p>Jusqu'à 1200 Mbit/s ↑ 200 Mbit/s</p>
+                <p>Appels 4h vers mobile et fixe international (zone 1)</p>
+                <p>Illimité vers fixe national</p>
+                <p>Installation : 0 dirham</p>
+                <p>Routeur Wi-Fi6 : 0 dirham</p>
+            </div>
+            <button class="button" onclick="openForm('Offre 100 Mo', '449')">Demander</button>
+        </div>
+
+        <div class="card">
+            <h2>Offre 200 Mo</h2>
+            <div class="offer-details">
+                <p>649 dirhams/mois</p>
+                <p>Jusqu'à 1200 Mbit/s ↑ 200 Mbit/s</p>
+                <p>Appels 6h vers mobile et fixe international (zone 1)</p>
+                <p>Illimité vers fixe national</p>
+                <p>Installation : 0 dirham</p>
+                <p>Routeur Wi-Fi6 : 0 dirham</p>
+            </div>
+            <button class="button" onclick="openForm('Offre 200 Mo', '649')">Demander</button>
+        </div>
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container" id="formContainer">
+        <button class="close-button" onclick="closeForm()">×</button>
+        <h2>Demande d'Offre</h2>
+        <form id="requestForm">
+            <input type="text" id="name" placeholder="Nom" required>
+            <input type="text" id="prenom" placeholder="Prénom" required>
+            <input type="tel" id="telephone" placeholder="Numéro de téléphone" required>
+            <select id="city" required>
+                <option value="">Choisir la ville</option>
+                <option value="Casablanca">Casablanca</option>
+                <option value="Marrakech">Marrakech</option>
+                <option value="Rabat">Rabat</option>
+                <option value="Salé">Salé</option>
+                <option value="Fès">Fès</option>
+                <option value="Tanger">Tanger</option>
+                <option value="Agadir">Agadir</option>
+                <option value="Oujda">Oujda</option>
+                <option value="Kenitra">Kenitra</option>
+                <option value="Tétouan">Tétouan</option>
+                <option value="Safi">Safi</option>
+                <option value="El Jadida">El Jadida</option>
+                <option value="Mohammedia">Mohammedia</option>
+                <option value="Berkane">Berkane</option>
+                <option value="Meknès">Meknès</option>
+                <option value="Kénitra">Kénitra</option>
+                <option value="Nador">Nador</option>
+                <option value="Taza">Taza</option>
+                <option value="Settat">Settat</option>
+                <option value="Sidi Kacem">Sidi Kacem</option>
+                <option value="El Hoceima">El Hoceima</option>
+                <option value="Laâyoune">Laâyoune</option>
+                <option value="Dakhla">Dakhla</option>
+                <option value="Azilal">Azilal</option>
+                <option value="Khemisset">Khemisset</option>
+                <option value="Khouribga">Khouribga</option>
+                <option value="Beni Mellal">Beni Mellal</option>
+                <option value="Ifrane">Ifrane</option>
+                <option value="Tiznit">Tiznit</option>
+                <option value="Al Hoceima">Al Hoceima</option>
+                <option value="Tiznit">Tiznit</option>
+                <option value="Sidi Ifni">Sidi Ifni</option>
+                <option value="Essaouira">Essaouira</option>
+            </select>
+            <input type="hidden" id="offre">
+            <input type="hidden" id="prix">
+            <button type="submit" class="button">Soumettre</button>
+        </form>
+    </div>
+
+    <script>
+        function openForm(offre, prix) {
+            document.getElementById('offre').value = offre;
+            document.getElementById('prix').value = prix;
+            document.getElementById('formContainer').style.display = 'block';
+        }
+
+        function closeForm() {
+            document.getElementById('formContainer').style.display = 'none';
+        }
+
+        document.getElementById('requestForm').onsubmit = function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const prenom = document.getElementById('prenom').value;
+            const telephone = document.getElementById('telephone').value;
+            const city = document.getElementById('city').value;
+            const offre = document.getElementById('offre').value;
+            const prix = document.getElementById('prix').value;
+
+            const message = `Demande d'offre: ${offre} à ${prix} dirhams\nNom: ${name} ${prenom}\nTéléphone: ${telephone}\nVille: ${city}`;
+            const whatsappNumber = '+212695944954'; // Add your WhatsApp number here
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+            window.open(whatsappUrl, '_blank'); // Open WhatsApp in a new tab
+            closeForm();
+        };
+    </script>
+</body>
+</html>
